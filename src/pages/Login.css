@@ -1,0 +1,118 @@
+/* Container que centraliza tudo e adiciona um efeito de fundo */
+.login-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Efeito de "raio" ou luz no fundo para dar ambiência */
+.background-glow {
+    position: absolute;
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(253, 216, 53, 0.15) 0%, rgba(0, 0, 0, 0) 70%);
+    top: -20%;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 0;
+    pointer-events: none;
+}
+
+/* O Cartão de Login - Estilo Glassmorphism */
+.login-card {
+    background: rgba(30, 30, 30, 0.7);
+    /* Semitransparente */
+    backdrop-filter: blur(10px);
+    /* Desfoque atrás */
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-top: 1px solid rgba(253, 216, 53, 0.3);
+    /* Borda superior amarela sutil */
+    border-radius: 24px;
+    padding: 3rem;
+    width: 100%;
+    max-width: 420px;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.5);
+    z-index: 1;
+    position: relative;
+    transition: transform 0.3s ease;
+}
+
+.login-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 40px 0 rgba(253, 216, 53, 0.1);
+    /* Brilho amarelo ao passar o mouse */
+}
+
+/* Logo animada */
+.brand-logo {
+    filter: drop-shadow(0 0 8px rgba(253, 216, 53, 0.6));
+    /* Brilho na logo */
+    margin-bottom: 1.5rem;
+    animation: float 6s ease-in-out infinite;
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(0px);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+
+    100% {
+        transform: translateY(0px);
+    }
+}
+
+/* Títulos */
+.title-highlight {
+    font-family: 'Exo 2', sans-serif;
+    color: var(--text-primary);
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.text-yellow {
+    color: var(--pikachu-primary);
+    text-shadow: 0 0 10px rgba(253, 216, 53, 0.4);
+}
+
+/* Inputs customizados para não parecerem padrão do navegador */
+.custom-input {
+    background: rgba(0, 0, 0, 0.3) !important;
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+    color: white !important;
+    border-radius: 12px !important;
+    height: 50px !important;
+    transition: all 0.3s ease !important;
+}
+
+.custom-input:focus {
+    border-color: var(--pikachu-primary) !important;
+    box-shadow: 0 0 0 1px var(--pikachu-primary) !important;
+}
+
+/* Botão Elétrico */
+.btn-electric {
+    background: linear-gradient(135deg, #FDD835 0%, #FBC02D 100%) !important;
+    color: #000 !important;
+    font-weight: 800 !important;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border-radius: 12px !important;
+    height: 50px !important;
+    transition: all 0.3s ease !important;
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-electric:hover {
+    transform: scale(1.02);
+    box-shadow: 0 0 20px rgba(253, 216, 53, 0.6) !important;
+    /* Muito brilho no hover */
+}
