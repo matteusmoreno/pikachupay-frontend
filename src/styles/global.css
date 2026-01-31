@@ -1,45 +1,66 @@
-/* Importando uma fonte moderna do Google Fonts */
-@import url('https://fonts.googleapis.com/css2?family=Exo+2:wght@400;600;700&family=Inter:wght@400;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Exo+2:wght@500;700&family=Inter:wght@400;500;600&display=swap');
 
 :root {
-    /* Paleta Pikachu Pay Autoral */
-    --pikachu-primary: #FDD835;
-    /* Amarelo Principal */
-    --pikachu-glow: #ffff00;
-    /* Amarelo Neon para brilho */
-    --pikachu-dark: #121212;
-    /* Fundo Preto */
-    --pikachu-dark-sec: #1e1e1e;
-    /* Fundo Secundário */
-    --text-primary: #ffffff;
-    --text-secondary: #aaaaaa;
+    /* Cores Ultra-Premium */
+    --bg-color: #050505;
+    /* Preto Profundo */
+    --surface-color: #0A0A0A;
+    /* Superfícies */
+    --border-color: rgba(255, 255, 255, 0.08);
+    /* Bordas quase invisíveis */
+
+    --primary: #FDD835;
+    /* Amarelo Pikachu (Marca) */
+    --primary-hover: #FBC02D;
+    /* Amarelo um pouco mais escuro */
+
+    --text-main: #FFFFFF;
+    --text-muted: #888888;
+    /* Cinza elegante para textos secundários */
+
+    /* Dimensões */
+    --header-height: 72px;
+    --max-width: 1240px;
+    /* Largura padrão da indústria */
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 body {
-    margin: 0;
-    padding: 0;
+    background-color: var(--bg-color);
+    color: var(--text-main);
     font-family: 'Inter', sans-serif;
-    background-color: var(--pikachu-dark);
-    color: var(--text-primary);
-    /* Background autoral: um degradê sutil para não ficar chapado */
-    background: radial-gradient(circle at 50% 10%, #2a2a2a 0%, #121212 80%);
-    min-height: 100vh;
+    /* Fonte padrão de interfaces modernas */
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
 }
 
-/* Scrollbar personalizada */
+button {
+    cursor: pointer;
+    border: none;
+    font-family: 'Inter', sans-serif;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    transition: all 0.2s ease;
+}
+
+/* Remove a barra de rolagem feia no Chrome */
 ::-webkit-scrollbar {
     width: 8px;
 }
 
 ::-webkit-scrollbar-track {
-    background: var(--pikachu-dark);
+    background: var(--bg-color);
 }
 
 ::-webkit-scrollbar-thumb {
     background: #333;
     border-radius: 4px;
-}
-
-::-webkit-scrollbar-thumb:hover {
-    background: var(--pikachu-primary);
 }
