@@ -1,0 +1,278 @@
+/* Container Principal */
+.register-container {
+    min-height: 100vh;
+    display: flex;
+    background-color: var(--bg-color);
+    font-family: 'Inter', sans-serif;
+    overflow: hidden;
+    /* Evita scroll desnecessário */
+}
+
+/* --- LADO ESQUERDO (VISUAL DINÂMICO) --- */
+.register-visual {
+    flex: 1;
+    background: radial-gradient(circle at center, #1a1a1a 0%, #050505 100%);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 60px;
+    position: relative;
+    transition: all 0.5s ease;
+    /* Transição suave de cor/fundo se quiser mudar por role */
+}
+
+.visual-content {
+    z-index: 2;
+    max-width: 480px;
+    /* Animação de entrada suave */
+    animation: fadeIn 0.8s ease-out;
+}
+
+.visual-icon-large {
+    font-size: 4rem;
+    color: var(--primary);
+    margin-bottom: 24px;
+    filter: drop-shadow(0 0 20px rgba(253, 216, 53, 0.4));
+}
+
+.visual-content h2 {
+    font-family: 'Exo 2', sans-serif;
+    font-size: 3.5rem;
+    color: white;
+    margin-bottom: 20px;
+    line-height: 1.1;
+}
+
+.visual-content span {
+    color: var(--primary);
+}
+
+.visual-content p {
+    color: var(--text-muted);
+    font-size: 1.25rem;
+    line-height: 1.6;
+}
+
+.visual-glow {
+    position: absolute;
+    width: 600px;
+    height: 600px;
+    background: var(--primary);
+    opacity: 0.05;
+    filter: blur(150px);
+    border-radius: 50%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+}
+
+/* --- LADO DIREITO (WIZARD FORM) --- */
+.register-form-wrapper {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px;
+    background-color: var(--bg-color);
+}
+
+.register-card {
+    width: 100%;
+    max-width: 480px;
+    z-index: 2;
+}
+
+/* Header com Barra de Progresso */
+.form-header {
+    margin-bottom: 30px;
+}
+
+.progress-container {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 24px;
+}
+
+.progress-step {
+    height: 4px;
+    flex: 1;
+    background: #333;
+    border-radius: 2px;
+    transition: all 0.3s ease;
+}
+
+.progress-step.active {
+    background: var(--primary);
+    box-shadow: 0 0 10px rgba(253, 216, 53, 0.3);
+}
+
+.form-header h1 {
+    font-family: 'Exo 2', sans-serif;
+    font-size: 2rem;
+    color: white;
+    margin-bottom: 8px;
+}
+
+.form-header p {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+}
+
+/* Cards de Seleção de Role (Passo 1) */
+.role-grid {
+    display: grid;
+    gap: 16px;
+}
+
+.role-card {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    background: var(--surface-color);
+    border: 1px solid var(--border-color);
+    padding: 24px;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.role-card:hover {
+    border-color: var(--primary);
+    background: rgba(255, 255, 255, 0.02);
+    transform: translateX(5px);
+}
+
+.role-card.selected {
+    border-color: var(--primary);
+    background: rgba(253, 216, 53, 0.05);
+}
+
+.role-icon {
+    font-size: 1.8rem;
+    color: var(--text-muted);
+    transition: color 0.2s;
+}
+
+.role-card:hover .role-icon,
+.role-card.selected .role-icon {
+    color: var(--primary);
+}
+
+.role-info h3 {
+    color: white;
+    font-size: 1.1rem;
+    margin-bottom: 4px;
+}
+
+.role-info p {
+    color: var(--text-muted);
+    font-size: 0.85rem;
+}
+
+/* Inputs e Form Elements */
+.input-group {
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.input-group label {
+    display: block;
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    margin-bottom: 8px;
+    font-weight: 500;
+}
+
+.input-group input {
+    width: 100%;
+    background: var(--surface-color);
+    border: 1px solid var(--border-color);
+    color: white;
+    padding: 14px 16px;
+    border-radius: 10px;
+    font-size: 1rem;
+    transition: all 0.2s;
+}
+
+.input-group input:focus {
+    border-color: var(--primary);
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(253, 216, 53, 0.1);
+}
+
+/* Botões de Navegação */
+.wizard-actions {
+    display: flex;
+    gap: 16px;
+    margin-top: 30px;
+}
+
+.btn-back {
+    background: transparent;
+    color: var(--text-muted);
+    padding: 14px 24px;
+    border-radius: 10px;
+    font-weight: 600;
+    border: 1px solid var(--border-color);
+    transition: 0.2s;
+}
+
+.btn-back:hover {
+    border-color: white;
+    color: white;
+}
+
+.btn-next {
+    flex: 1;
+    background: var(--primary);
+    color: black;
+    padding: 14px;
+    border-radius: 10px;
+    font-weight: 700;
+    font-size: 1rem;
+    transition: 0.2s;
+}
+
+.btn-next:hover {
+    background: var(--primary-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(253, 216, 53, 0.3);
+}
+
+.btn-next:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    transform: none;
+}
+
+/* Loading Spinner pequeno */
+.spinner {
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsividade */
+@media (max-width: 900px) {
+    .register-visual {
+        display: none;
+    }
+}
